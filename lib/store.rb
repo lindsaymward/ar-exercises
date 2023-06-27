@@ -5,8 +5,9 @@ class Store < ActiveRecord::Base
   validate :carries_apparel
 
   def carries_apparel
-    if !:mens_apparel && !:womens_apparel
+    if mens_apparel == nil && womens_apparel == nil
       errors.add(:mens_apparel, "need to carry one type of apparel")
     end
   end
+
 end
